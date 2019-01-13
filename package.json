@@ -1,0 +1,33 @@
+{
+    "name": "flintcolour",
+    "displayName": "flintcolour",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.30.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "1337",
+                "uiTheme": "vs-dark",
+                "path": "./themes/1337-color-theme.json"
+            }
+        ],
+        "languages": [{
+            "id": "flint",
+            "aliases": ["Flint", "flint"],
+            "extensions": [".flint"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "flint",
+            "scopeName": "source.flint",
+            "path": "./syntaxes/flint.tmLanguage.json"
+        }]
+
+    }
+}

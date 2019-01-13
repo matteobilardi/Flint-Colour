@@ -1,0 +1,55 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Flint",
+	"patterns": [
+		{
+			"include": "#keywords"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.flint",
+				"match": "\\b(if|while|for|return|contract|any|struct)\\b"
+			}]
+		},
+		"letDeclaration": {
+			"patterns": [{
+				 "name": "declaration.let",
+				"begin": "let",
+				"beginCaptures": {
+					"0" : {"name": "let.word"}
+				},
+				"end": "\\n",
+				"patterns": [
+					{
+						"include": "#expression"
+					},
+					{
+						"include": "#typeAnnotation"  
+					}
+				]
+				
+			}]
+		},
+		"expression" : {
+			"patterns": [{
+				"name" : "expression.basic",
+				"match": "\\w+"
+			}]
+		},
+		"typeAnnotation": {
+			"name": "type.annotation",
+			"begin": ":",
+			"beginCapture": {
+				"0" : {"name": "type.colon"}
+			},
+			"end": "\\n",
+			"patterns": [{
+				"include": "#expression"
+			}]
+
+		}
+	},
+	"scopeName": "source.flint"
+}

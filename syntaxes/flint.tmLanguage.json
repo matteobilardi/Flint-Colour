@@ -1,0 +1,81 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Flint",
+	"patterns": [
+		{
+			"include": "#controlKeywords"
+		},
+		{
+			"include": "#integer"
+		},
+		{
+			"include": "#float"
+		},
+		{
+			"include": "#boolean"
+		},
+		{
+			"include": "#addressLiteral"
+		},
+		{
+			"include": "#numericOperator"
+		},
+		{
+			"include": "#logicalOperator"
+		},
+		{
+			"include": "#assignmentOperator"
+		}
+	],
+	"repository": {
+		"controlKeywords": {
+			"patterns": [{
+				"name": "keyword.control.flint",
+				"match": "\\b(if|while|for|return)\\b"
+			}]
+		},
+		"integer": {
+			"patterns": [{
+				"name": "constant.numeric.integer.flint",
+				"match": "\\d+"
+			}]
+		},
+		"float": {
+			"patterns": [{
+				"name": "constant.numeric.float.flint",
+				"match": "\\d+\\.\\d+"
+			}]
+		},
+		"boolean":{
+			"patterns": [{
+				"name": "constant.language",
+				"match": "\\b(true|false)\\b"
+			}]
+		},
+		"addressLiteral":{
+			"patterns": [{
+				"name": "constant.numeric.hex",
+				"match": "[A-F0-9+]"
+			}]
+		},
+		"numericOperator":{
+			"patterns": [{
+				"name": "keyword.operator.arithmetic.flint",
+				"match": "(\\+|\\-|\\*|\\/|\\*\\*|\\&\\*|\\&-|\\&\\+)"
+			}]
+		},
+		"logicalOperator":{
+			"patterns": [{
+				"name": "keyword.operator.logical.flint",
+				"match": "(\\|\\||&&|!|>|<|>=|<=|==)"
+			}]
+		},
+		"assignmentOperator":{
+			"patterns": [{
+				"name": "keyword.operator.assignment.flint",
+				"match": "(\\+= | = | -= | \\*= | \\/= | !=)"
+			}]
+		}
+	},
+	"scopeName": "source.flint"
+}
