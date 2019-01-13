@@ -25,6 +25,18 @@
 		},
 		{
 			"include": "#assignmentOperator"
+		},
+		{
+			"include": "#self"
+		},
+		{
+			"include": "#identifier"
+		},
+		{
+			"include" : "#declarationKeywords"
+		},
+		{
+			"include" : "#modifiers"
 		}
 	],
 	"repository": {
@@ -61,7 +73,7 @@
 		"numericOperator":{
 			"patterns": [{
 				"name": "keyword.operator.arithmetic.flint",
-				"match": "(\\+|\\-|\\*|\\/|\\*\\*|\\&\\*|\\&-|\\&\\+)"
+				"match": "(\\+|\\-|\\*|\\/|\\*\\*|&\\*|&-|&\\+)"
 			}]
 		},
 		"logicalOperator":{
@@ -74,6 +86,24 @@
 			"patterns": [{
 				"name": "keyword.operator.assignment.flint",
 				"match": "(\\+= | = | -= | \\*= | \\/= | !=)"
+			}]
+		},
+		"self":{
+			"patterns": [{
+				"name": "variable.language.flint",
+				"match": "self|this"
+			}]
+		},
+		"declarationKeywords":{
+			"patterns": [{
+				"name": "storage.type.flint",
+				"match": "\\b(func|contract|enum|Int|Bool|String|Address)\\b"
+			}]
+		},
+		"modifiers":{
+			"patterns": [{
+				"name": "storage.modifier.flint",
+				"match": "\\b(mutating|visible|let|var|public)\\b"
 			}]
 		}
 	},
