@@ -37,6 +37,12 @@
 		},
 		{
 			"include" : "#modifiers"
+		},
+		{
+			"include" : "#string"
+		},
+		{
+			"include" : "#accessor"
 		}
 	],
 	"repository": {
@@ -104,6 +110,25 @@
 			"patterns": [{
 				"name": "storage.modifier.flint",
 				"match": "\\b(mutating|visible|let|var|public)\\b"
+			}]
+		},
+		"accessor":{
+			"patterns": [{
+				"name": "punctuation.accessor",
+				"match": "\\."
+			}]
+		},
+		"string":{
+			"patterns": [{
+				"name": "test.flint",
+				"begin": "\"",
+				"end": "\"",
+				"beginCaptures": {"0": {"name":"punctuation.definition.string.begin"}},
+				"endCaptures": {"0": {"name":"punctuation.definition.string.end"}},
+				"patterns": [{
+					"name":"string",
+					"match": "\\w+"
+				}]
 			}]
 		}
 	},
