@@ -43,6 +43,9 @@
 		},
 		{
 			"include" : "#accessor"
+		},
+		{
+			"include" : "#colon"
 		}
 	],
 	"repository": {
@@ -120,7 +123,7 @@
 		},
 		"string":{
 			"patterns": [{
-				"name": "test.flint",
+				"name": "string.flint",
 				"begin": "\"",
 				"end": "\"",
 				"beginCaptures": {"0": {"name":"punctuation.definition.string.begin"}},
@@ -129,6 +132,13 @@
 					"name":"string",
 					"match": "\\w+"
 				}]
+			}]
+		},
+		"colon":
+		{
+			"patterns": [{
+				"name": "punctuation.separator",
+				"match": ":"
 			}]
 		}
 	},

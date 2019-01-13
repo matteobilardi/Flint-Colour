@@ -38,14 +38,18 @@
 				"foreground": "#ff0000"
 			}
 		},
+		{
+			"scope": "punctuation.separator",
+			"settings": {
+				"foreground": "#ff00bf"
+			}
+		},
         {
             "name": "Keywords, Punctuation",
             "scope": [
                 "keyword.control",
                 "punctuation.definition.parameters",
                 "punctuation.section.parens.begin",
-                "punctuation.separator",
-                "punctuation.accessor",
                 "punctuation.definition.array"
             ],
             "settings": {
