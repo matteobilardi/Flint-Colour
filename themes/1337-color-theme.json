@@ -31,19 +31,19 @@
             "settings": {
                 "foreground": "#c781b0"
             }
-        },
+		},
+		{
+			"scope": "punctuation.accessor",
+			"settings": {
+				"foreground": "#ff0000"
+			}
+		},
         {
             "name": "Keywords, Punctuation",
             "scope": [
                 "keyword.control",
-                "storage.type",
-                "storage.modifier",
                 "punctuation.definition.parameters",
                 "punctuation.section.parens.begin",
-                "variable.parameter",
-                "variable.other.property",
-                "support.variable.property.dom",
-                "variable.other.object.property",
                 "punctuation.separator",
                 "punctuation.accessor",
                 "punctuation.definition.array"
@@ -53,17 +53,21 @@
             }
         },
         {
-            "name": "Objects",
+            "name": "Keywords for func and visibility",
             "scope": [
-                "variable.other.object",
-                "support.class.console",
-                "support.variable.dom",
-                "support.constant",
-                "entity.name.type.module",
-                "entity.name.type"
+                "storage.type"
             ],
             "settings": {
-                "foreground": "#80DEEA"
+                "foreground": "#3cd400"
+            }
+        },
+        {
+            "name": "Keywords for storage modification",
+            "scope": [
+                "storage.modifier"
+            ],
+            "settings": {
+                "foreground": "#d400b8"
             }
         },
         {
@@ -84,7 +88,7 @@
                 "constant.other.symbol"
             ],
             "settings": {
-                "foreground": "#FBC02D"
+                "foreground": "#fb5d2d"
             }
         },
         {
@@ -98,27 +102,13 @@
             }
         },
         {
-            "name": "Method definitions",
-            "scope": [
-                "entity.name.function",
-                "support.function.dom",
-                "support.function"
-            ],
-            "settings": {
-                "foreground": "#ECEFF1",
-                "fontStyle": "bold"
-            }
-        },
-        {
             "name": "Variables",
             "scope": [
-                "variable.language",
-                "variable.other.member",
-                "variable.other.readwrite",
-                "punctuation.definition.variable"
+				"variable.language",
+				"varible.other"
             ],
             "settings": {
-                "foreground": "#80DEEA"
+                "foreground": "#ea80d8"
             }
         }
     ]
