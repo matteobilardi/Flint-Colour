@@ -55,7 +55,7 @@
 		"controlKeywords": {
 			"patterns": [{
 				"name": "keyword.control.flint",
-				"match": "\\b(if|while|for|return|become|event)\\b"
+				"match": "\\b(if|else|while|for|return|become)\\b"
 			}]
 		},
 		"integer": {
@@ -109,13 +109,13 @@
 		"declarationKeywords":{
 			"patterns": [{
 				"name": "storage.type.flint",
-				"match": "\\b(func|contract|enum|Int|Bool|String|Address)\\b"
+				"match": "\\b(let|var|event|func|contract|enum|Int|Bool|String|Address)\\b"
 			}]
 		},
 		"modifiers":{
 			"patterns": [{
 				"name": "storage.modifier.flint",
-				"match": "\\b(visible|let|var|public)\\b"
+				"match": "\\b(visible|public)\\b"
 			}]
 		},
 		"mutatingModifiers":{

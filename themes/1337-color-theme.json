@@ -69,10 +69,19 @@
             "name": "Keywords for storage modification and control",
             "scope": [
                 "storage.modifier",
-		"keyword.control.flint"
+		        "keyword.control.flint"
             ],
             "settings": {
                 "foreground": "#d400b8"
+            }
+        },
+        {
+            "name": "mutating",
+            "scope": [
+                "storage.modifier.mutating.flint"
+            ],
+            "settings": {
+                "foreground": "#e7e41f"
             }
         },
         {
