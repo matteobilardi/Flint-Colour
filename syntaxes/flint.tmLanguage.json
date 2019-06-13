@@ -52,7 +52,7 @@
 		"controlKeywords": {
 			"patterns": [{
 				"name": "keyword.control.flint",
-				"match": "\\b(if|while|for|return)\\b"
+				"match": "\\b(if|while|for|return|become|event)\\b"
 			}]
 		},
 		"integer": {
