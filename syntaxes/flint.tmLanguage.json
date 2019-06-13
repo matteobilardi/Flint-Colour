@@ -36,6 +36,9 @@
 			"include" : "#declarationKeywords"
 		},
 		{
+			"include" : "#mutatingModifiers"
+		},
+		{
 			"include" : "#modifiers"
 		},
 		{
@@ -112,7 +115,13 @@
 		"modifiers":{
 			"patterns": [{
 				"name": "storage.modifier.flint",
-				"match": "\\b(mutating|visible|let|var|public)\\b"
+				"match": "\\b(visible|let|var|public)\\b"
+			}]
+		},
+		"mutatingModifiers":{
+			"patterns": [{
+				"name": "storage.modifier.mutating.flint",
+				"match": "\\bmutating\\b"
 			}]
 		},
 		"accessor":{
