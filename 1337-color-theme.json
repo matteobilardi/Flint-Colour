@@ -1,0 +1,119 @@
+{
+    "name": "Goodvibe",
+    "type": "dark",
+    "colors": {
+        "editor.background": "#1B1B1B",
+        "editor.foreground": "#00BCD4",
+        "editor.lineHighlightBackground": "#313131",
+        "editorWhitespace.foreground": "#424242",
+        "editorIndentGuide.background": "#616161",
+        "editor.findMatchHighlightBackground": "#DD2C00"
+    },
+
+    "tokenColors": [
+        {
+            "name": "Comments",
+            "scope": [
+                "comment",
+                "punctuation.definition.comment"
+            ],
+            "settings": {
+                "foreground": "#81C784"
+            }
+        },
+        {
+            "name": "BinaryOps",
+            "scope": [
+				"keyword.operator.arithmetic.flint",
+				"keyword.operator.logical.flint",
+				"keyword.operator.assignment.flint"
+            ],
+            "settings": {
+                "foreground": "#c781b0"
+            }
+		},
+		{
+			"scope": "punctuation.accessor",
+			"settings": {
+				"foreground": "#ff0000"
+			}
+		},
+		{
+			"scope": "punctuation.separator",
+			"settings": {
+				"foreground": "#ff00bf"
+			}
+		},
+        {
+            "name": "Keywords, Punctuation",
+            "scope": [
+                "keyword.control",
+                "punctuation.definition.parameters",
+                "punctuation.section.parens.begin",
+                "punctuation.definition.array"
+            ],
+            "settings": {
+                "foreground": "#00BCD4"
+            }
+        },
+        {
+            "name": "Keywords for func and visibility",
+            "scope": [
+                "storage.type"
+            ],
+            "settings": {
+                "foreground": "#3cd400"
+            }
+        },
+        {
+            "name": "Keywords for storage modification",
+            "scope": [
+                "storage.modifier"
+            ],
+            "settings": {
+                "foreground": "#d400b8"
+            }
+        },
+        {
+            "name": "Constants",
+            "scope": [
+                "constant.numeric",
+                "constant.language",
+                "support.type.primitive"
+            ],
+            "settings": {
+                "foreground": "#F9A825"
+            }
+        },
+        {
+            "name": "Strings",
+            "scope": [
+                "string",
+                "constant.other.symbol"
+            ],
+            "settings": {
+                "foreground": "#fb5d2d"
+            }
+        },
+        {
+            "name": "Quotes",
+            "scope": [
+                "punctuation.definition.string.begin",
+                "punctuation.definition.string.end"
+            ],
+            "settings": {
+                "foreground": "#00BCD4"
+            }
+        },
+        {
+            "name": "Variables",
+            "scope": [
+				"variable.language",
+				"varible.other"
+            ],
+            "settings": {
+                "foreground": "#ea80d8"
+            }
+        }
+    ]
+}
