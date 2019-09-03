@@ -76,7 +76,7 @@
             }
         },
         {
-            "name": "mutating",
+            "name": "mutates",
             "scope": [
                 "storage.modifier.mutating.flint"
             ],

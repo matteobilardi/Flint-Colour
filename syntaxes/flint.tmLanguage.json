@@ -18,6 +18,9 @@
 			"include": "#boolean"
 		},
 		{
+			"include": "#comment"
+		},
+		{
 			"include": "#numericOperator"
 		},
 		{
@@ -27,16 +30,31 @@
 			"include": "#assignmentOperator"
 		},
 		{
+			"include": "#inoutOperator"
+		},
+		{
 			"include": "#self"
 		},
 		{
-			"include": "#identifier"
+			"include" : "#attribute"
+		},
+		{
+			"include": "#functionCall"
+		},
+		{
+			"include": "#functionDefinition"
 		},
 		{
 			"include" : "#declarationKeywords"
 		},
 		{
-			"include" : "#mutatingModifiers"
+			"include" : "#mutatingModifier"
+		},
+		{
+			"include" : "#verifier"
+		},
+		{
+			"include" : "#types"
 		},
 		{
 			"include" : "#modifiers"
@@ -49,13 +67,16 @@
 		},
 		{
 			"include" : "#colon"
+		},
+		{
+			"include" : "#payable"
 		}
 	],
 	"repository": {
 		"controlKeywords": {
 			"patterns": [{
 				"name": "keyword.control.flint",
-				"match": "\\b(if|else|while|for|return|become)\\b"
+				"match": "\\b(if|else|while|for|return|become|struct|external|trait|as|call|in)\\b"
 			}]
 		},
 		"integer": {
@@ -88,6 +109,12 @@
 				"match": "(\\+|\\-|\\*|\\/|\\*\\*|&\\*|&-|&\\+)"
 			}]
 		},
+		"inoutOperator":{
+			"patterns": [{
+				"name": "keyword.operator.inout.flint",
+				"match": "(&)"
+			}]
+		},
 		"logicalOperator":{
 			"patterns": [{
 				"name": "keyword.operator.logical.flint",
@@ -97,19 +124,28 @@
 		"assignmentOperator":{
 			"patterns": [{
 				"name": "keyword.operator.assignment.flint",
-				"match": "(\\+= | = | -= | \\*= | \\/= | !=)"
+				"match": "(\\+=|=|-=|\\*=|\\/=|!=|@)"
 			}]
 		},
 		"self":{
 			"patterns": [{
 				"name": "variable.language.flint",
-				"match": "self|this"
+				"match": "self"
 			}]
 		},
 		"declarationKeywords":{
 			"patterns": [{
 				"name": "storage.type.flint",
-				"match": "\\b(let|var|event|func|contract|enum|Int|Bool|String|Address)\\b"
+				"match": "\\b(let|var|event|contract|enum|any)\\b"
+			}]
+		},
+		"types":{
+			"patterns": [{
+				"name": "entity.name.type.external.flint",
+				"match": "\\b(uint64|address|bool|bytes32|uint256)\\b"
+			}, {
+				"name": "entity.name.type.flint",
+				"match": "\\b(_*[A-Z][A-Za-z_$0-9]*)\\b"
 			}]
 		},
 		"modifiers":{
@@ -118,10 +154,16 @@
 				"match": "\\b(visible|public)\\b"
 			}]
 		},
-		"mutatingModifiers":{
+		"verifier":{
+			"patterns": [{
+				"name": "keyword.operator.verifier.flint",
+				"match": "\\b(pre|post|invariant|assert)\\b"
+			}]
+		},
+		"mutatingModifier":{
 			"patterns": [{
 				"name": "storage.modifier.mutating.flint",
-				"match": "\\bmutating\\b"
+				"match": "\\bmutates\\b"
 			}]
 		},
 		"accessor":{
@@ -143,11 +185,68 @@
 				}]
 			}]
 		},
-		"colon":
+		"payable": {
+			"patterns": [{
+                "match": "payable",
+				"name": "entity.name.function"
+				}]
+		},
+		"functionCall": {
+			"patterns": [
+                {
+                    "match": "([a-zA-Z_][a-zA-Z0-9:_$]*)\\s*\\(",
+                    "captures": {
+                        "1": {
+                            "name": "entity.name.function"
+                        }
+                    }
+				}
+			]
+		},
+		"functionDefinition": {
+			"patterns": [
+                {
+                    "match": "(func) ([a-zA-Z_][a-zA-Z0-9:_$]*)\\s*\\((?:(?:\\s*(implicit\\s+)??([a-zA-Z_][a-zA-Z0-9_]*):\\s*(inout\\s+)?(.*?),)*\\s*(implicit\\s+)?([a-zA-Z_][a-zA-Z0-9_]*):\\s*(inout\\s+)?(.*?)|\\s*)\\)",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.control.function.flint"
+                        },
+                        "2": {
+                            "name": "entity.name.function"
+                        },
+                        "3": {
+                            "name": "keyword.control.flint"
+                        },
+                        "4": {
+                            "name": "variable.parameter"
+                        },
+                        "5": {
+                            "name": "keyword.control.flint"
+                        },
+                        "6": {
+                            "name": "entity.name.type"
+                        },
+                        "7": {
+                            "name": "keyword.control.flint"
+                        },
+                        "8": {
+                            "name": "variable.parameter"
+                        },
+                        "9": {
+                            "name": "keyword.control.flint"
+                        },
+                        "10": {
+                            "name": "entity.name.type"
+                        }
+                    }
+				}
+			]
+		},
+		"comment":
 		{
 			"patterns": [{
-				"name": "punctuation.separator",
-				"match": ":"
+				"name": "comment.line.double-slash",
+				"match": "//.*"
 			}]
 		}
 	},
