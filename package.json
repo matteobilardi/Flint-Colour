@@ -1,6 +1,6 @@
 {
-    "name": "flintcolour",
-    "displayName": "flintcolour",
+    "name": "flint-colour",
+    "displayName": "flint-colour",
     "description": "",
     "version": "0.0.1",
     "engines": {
@@ -20,7 +20,7 @@
         "languages": [{
             "id": "flint",
             "aliases": ["Flint", "flint"],
-            "extensions": [".flint"],
+            "extensions": [".flint", ".tflint"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
